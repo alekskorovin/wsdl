@@ -1,0 +1,30 @@
+{
+    "sourceFile": "README.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1685806547347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685806556264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n ```\n SOAP_WSDL_SERVICE_URL=http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL\n ```\n \n-First, run the development server:\n+Run the development server:\n \n ```bash\n npm run dev\n # or\n"
+                },
+                {
+                    "date": 1685806679928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,10 @@\n ```\n \n Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n \n+Try to enter into the input field `EUR` or `USD` value to get a list of countries that use such currency.\n+\n You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.\n \n This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.\n \n"
+                },
+                {
+                    "date": 1685806705941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n ```\n \n Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n \n-Try to enter into the input field `EUR` or `USD` value to get a list of countries that use such currency.\n+Try to enter into the input field `EUR` or `USD` value and click on the `Search` button to get a list of countries that use such currency.\n \n You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.\n \n This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.\n"
+                }
+            ],
+            "date": 1685806547347,
+            "name": "Commit-0",
+            "content": "# An example of usage of WSDL with Next 13\n\n## 3rd party packages and APIs\n\n### API Endpoint\n\nThe URL for API Endpoint was taken from POSTMAN collection: [https://documenter.getpostman.com/view/8854915/Szf26WHn?version=latest#c9b8614d-2f25-4eb5-9b39-3715b0d04992](https://documenter.getpostman.com/view/8854915/Szf26WHn?version=latest#c9b8614d-2f25-4eb5-9b39-3715b0d04992)\n\n### SOAP client\n\nDocumentation regarding the strong-soap package: [https://github.com/loopbackio/strong-soap#install](https://github.com/loopbackio/strong-soap#install)\n\n## Getting Started\n\nInstall npm dependencies:\n\n```bash\nnpm install\n```\n\nCreate a file `.env.local` with that content:\n```\nSOAP_WSDL_SERVICE_URL=http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL\n```\n\nFirst, run the development server:\n\n```bash\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\nYou can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.\n\nThis project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.\n\n## Learn More\n\nTo learn more about the technologies which were used, take a look at the following resources:\n\n- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.\n- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.\n- [Learn strong-soap documentation](https://github.com/loopbackio/strong-soap#install).\n\n## Deploy on Vercel\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.\n"
+        }
+    ]
+}

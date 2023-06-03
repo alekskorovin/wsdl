@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/api/get-countries-using-currency.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1685806473271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1685806473271,
+            "name": "Commit-0",
+            "content": "import type { NextApiRequest, NextApiResponse } from 'next';\r\n\r\nconst soap = require('strong-soap').soap;\r\n\r\n// URL for API Endpoit was taken from POSTMAN collection:\r\n// https://documenter.getpostman.com/view/8854915/Szf26WHn?version=latest#c9b8614d-2f25-4eb5-9b39-3715b0d04992\r\n// check value in the .env.local file\r\nconst url = process.env.SOAP_WSDL_SERVICE_URL;\r\nconst options = {};\r\n\r\n// Documentation regarding the strong-soap package:\r\n// https://github.com/loopbackio/strong-soap#install\r\nconst fetch = async (currency: string) => {\r\n  var promiseResolve: any, promiseReject;\r\n\r\n  var result = new Promise(function(resolve, reject){\r\n    promiseResolve = resolve;\r\n    promiseReject = reject;\r\n  });\r\n\r\n  async function getData(_: any, client: any) {\r\n    var method = client['CountryInfoService']['CountryInfoServiceSoap12']['CountriesUsingCurrency'];\r\n    return method({ sISOCurrencyCode: currency }, function(_: any, result: any, envelope: any) {\r\n      const list = result.CountriesUsingCurrencyResult.tCountryCodeAndName;\r\n      const resultList = list.map(({ sISOCode, sName }: any) => ({\r\n        isoCode: sISOCode,\r\n        name: sName\r\n      }))\r\n      promiseResolve(resultList);\r\n    });\r\n  };\r\n\r\n  soap.createClient(url, options, getData);\r\n\r\n  return result;\r\n};\r\n\r\nconst GetCountriesUsingCurrencyAPI = async (req: NextApiRequest, res: NextApiResponse) => {\r\n  const {\r\n    query: { currency },\r\n  } = req;\r\n\r\n  try {\r\n    const result = await fetch(currency as string);\r\n\r\n    res.setHeader('Cache-Control', 'no-store');\r\n    res.status(200).json(result);\r\n  } catch (e) {\r\n    console.log('Error, something went wrong.', e);\r\n    res.setHeader('Cache-Control', 'no-store');\r\n    res.status(400).json({ error: 'Unexpected error', code: 400 });\r\n  }\r\n};\r\n\r\nexport default GetCountriesUsingCurrencyAPI;\r\n"
+        }
+    ]
+}
